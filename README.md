@@ -1,5 +1,5 @@
 # Website
-My first Website (This is Dynamic)
+My first Website 
 
 Part 1
  | I created the box and put the texts and box
