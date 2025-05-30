@@ -3,29 +3,82 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>My Website</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>My Personal Website</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(153deg, #74ebd5 0%, #ACB6E5 100%);
+      color: #211e1e;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .container {
+      background: #ffffff;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      max-width: 500px;
+      width: 90%;
+      text-align: center;
+    }
+    h1 {
+      margin-bottom: 10px;
+    }
+    p {
+      margin-bottom: 2px;
+    }
+    .fun-facts {
+      margin-top: 0px;
+      text-align: Left;
+    }
+    .fun-facts h2 {
+      margin-bottom: 8px;
+      border-bottom: 2px solid #34b939;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+    .fun-facts ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .fun-facts li {
+      margin-bottom: 8px;
+      position: relative;
+      padding-left: 20px;
+    }
+    .fun-facts li::before {
+      content: '⭐';
+      position: absolute ;
+      left: 0;
+    }
+    footer {
+      margin-top: 30px;
+      font-size: 12px;
+      color: #615e5e;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
-    <h1>Welcome to My Website</h1>
-    <p>Please fill out the form below:</p>
+    <h1>Hello! I’m Prem ✨</h1>
+    <p>Welcome to my personal website — feel free to explore!</p>
 
-    <form id="contactForm">
-      <input type="text" name="name" placeholder="Your Name" required />
-      <input type="email" name="email" placeholder="Your Email" required />
-      <button type="submit">Submit</button>
-    </form>
-
-    <p id="responseMessage"></p>
-
-    <div id="loginHistory">
-      <h2>Login History</h2>
-      <ul id="historyList"></ul>
-      <button onclick="clearHistory()">Clear History</button>
+    <div class="fun-facts">
+      <h2>Fun Facts About Me</h2>
+      <ul>
+        <li>I love working on Real projects.</li>
+        <li>Currently exploring finance, trading, and management.</li>
+        <li>Basketball is my go-to sport 🏀.</li>
+        <li>Always up for learning new things 🚀.</li>
+      </ul>
     </div>
-  </div>
 
-  <script src="script.js"></script>
+    <footer>
+      &copy; 2025 Prem’s Website. All rights reserved.
+    </footer>
+  </div>
 </body>
 </html>
