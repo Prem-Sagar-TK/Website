@@ -127,7 +127,7 @@ body {
 }
 
 /* Social Icons */
-.body-social-icons {
+/* .body-social-icons {
   margin-top: 20px;
 }
 
@@ -141,7 +141,23 @@ body {
 .body-social-icons a:hover {
   transform: scale(1.2);
   color: #b56bff;
+} */
+
+.body-social-icons i {
+  font-family: "Font Awesome 6 Brands";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 28px;
+  color: white;
+  margin-right: 20px;
+  transition: transform 0.3s ease, color 0.3s ease;
 }
+
+.body-social-icons i:hover {
+  transform: scale(1.2);
+  color: #b56bff;
+}
+
 
 .connect-heading {
   margin-top: 50px;
