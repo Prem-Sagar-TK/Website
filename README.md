@@ -1,6 +1,6 @@
 # Prem Sagar TK | Personal Portfolio Website 🌐
 
-Welcome to my personal portfolio website {Still On Going}! This site serves as a digital profile to showcase who I am, my skills, and how to connect with me. Built with just HTML and CSS, it's clean, responsive-ready, and includes subtle animations and iconography using Font Awesome.
+Welcome to my personal portfolio website **{Still On Going}**! This site serves as a digital profile to showcase who I am, my skills, and how to connect with me. Built with just HTML and CSS, it's clean, responsive-ready, and includes subtle animations and iconography using Font Awesome.
 
 ---
 
