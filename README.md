@@ -58,7 +58,6 @@ This portfolio contains:
 Feel free to reach out via:
 
 - [Instagram](https://www.instagram.com/premsagar.tk/)
-- [GitHub](https://github.com/Prem-Sagar-TK)
 - [LinkedIn](https://www.linkedin.com/in/prem-sagar-t-k/)
 
 ---
