@@ -5,6 +5,14 @@
   box-sizing: border-box;
 }
 
+html,
+body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+
 /* Global Styles */
 body {
   font-family: 'Poppins', sans-serif;
@@ -53,6 +61,8 @@ body {
   align-items: center;
   padding: 0 60px;
   background: transparent;
+  overflow: hidden;
+  /* Prevent layout jumps */
 }
 
 .hero-left {
@@ -65,83 +75,31 @@ body {
   margin: 15px 0;
 }
 
+#designation {
+  font-family: 'Poppins', sans-serif;
+  font-size: 32px;
+  color: #b56bff;
+  white-space: nowrap;
+  min-width: 250px;
+  /* Width of the longest role */
+  overflow: hidden;
+  border-right: 2px solid #b56bff;
+  animation: blink 0.75s step-end infinite;
+}
+
+@keyframes blink {
+
+  from,
+  to {
+    border-color: transparent;
+  }
+
+}
+
 .highlight {
   color: #b56bff;
   text-shadow: 0 0 10px #b56bff;
 }
-
-.scroll-btn {
-  display: inline-block;
-  margin-top: 25px;
-  padding: 12px 28px;
-  background-color: #b56bff;
-  color: #fff;
-  border-radius: 25px;
-  text-decoration: none;
-  font-weight: 500;
-  transition: background 0.3s, transform 0.3s;
-}
-
-.scroll-btn:hover {
-  background-color: #a044ff;
-  transform: scale(1.05);
-}
-
-/* Page Two: Container */
-.page-two {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  justify-content: space-between;
-}
-
-/* Intro Section */
-.intro-section {
-  padding: 60px;
-  flex: 1;
-  display: flex;
-  align-items: center;
-  background: transparent;
-}
-
-.intro-left {
-  max-width: 700px;
-  text-align: left;
-}
-
-.pointer {
-  color: #b56bff;
-  margin-right: 10px;
-}
-
-.intro-left h2 {
-  font-size: 1.8rem;
-  color: #b56bff;
-  margin-bottom: 20px;
-}
-
-.intro-left p {
-  font-size: 1.1rem;
-  color: #d1d1ff;
-  margin-bottom: 15px;
-}
-
-/* Social Icons */
-/* .body-social-icons {
-  margin-top: 20px;
-}
-
-.body-social-icons a {
-  font-size: 28px;
-  color: white;
-  margin-right: 20px;
-  transition: transform 0.3s ease, color 0.3s ease;
-}
-
-.body-social-icons a:hover {
-  transform: scale(1.2);
-  color: #b56bff;
-} */
 
 .body-social-icons i {
   font-family: "Font Awesome 6 Brands";
