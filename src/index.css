@@ -85,16 +85,28 @@
     font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     font-feature-settings: "rlig" 1, "calt" 1;
     scroll-behavior: smooth;
-    background-image: 
-      radial-gradient(circle at top center, hsl(var(--primary) / 0.15) 0%, transparent 40%),
-      linear-gradient(to right, hsl(var(--border) / 0.3) 1px, transparent 1px),
-      linear-gradient(to bottom, hsl(var(--border) / 0.3) 1px, transparent 1px);
-    background-size: 100% 100%, 4rem 4rem, 4rem 4rem;
-    background-position: top center, center center, center center;
+    background: radial-gradient(circle at 50% -20%, hsl(var(--primary) / 0.1), transparent 50%),
+                radial-gradient(circle at -20% 50%, hsl(var(--primary) / 0.05), transparent 50%),
+                radial-gradient(circle at 120% 50%, hsl(var(--primary) / 0.05), transparent 50%);
+    background-color: hsl(var(--background));
     background-attachment: fixed;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-b from-foreground to-foreground/50;
+  }
+  .card-premium {
+    @apply bg-card/40 backdrop-blur-xl border border-white/10 shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:border-white/20 hover:bg-card/60 transition-all duration-500 relative overflow-hidden;
   }
 }
 
 html {
   scroll-padding-top: 5rem;
+}
+
+::selection {
+  background: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
 }

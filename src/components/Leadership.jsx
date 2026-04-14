@@ -20,57 +20,73 @@ const highlights = [
 ];
 
 export function Leadership() {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { staggerChildren: 0.15 } }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, scale: 0.95 },
+    visible: { opacity: 1, scale: 1, transition: { type: "spring", stiffness: 80 } }
+  };
+
   return (
-    <section className="py-20 px-6">
-      <div className="container mx-auto max-w-5xl">
+    <section className="py-24 px-6 relative overflow-hidden">
+      <div className="container mx-auto max-w-6xl relative z-10">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="space-y-12"
+           variants={containerVariants}
+           initial="hidden"
+           whileInView="visible"
+           viewport={{ once: true }}
+           className="space-y-16"
         >
-          <div className="space-y-4">
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Leadership & Achievements</h2>
-            <div className="w-12 h-1 bg-primary rounded-full"></div>
-            <p className="text-muted-foreground text-lg max-w-2xl pt-2">
+          <motion.div variants={itemVariants} className="space-y-4 text-center">
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tighter text-gradient">Leadership & Impact</h2>
+            <div className="w-16 h-1.5 bg-gradient-to-r from-primary to-primary/30 rounded-full mx-auto"></div>
+            <p className="text-muted-foreground/80 text-lg max-w-2xl mx-auto pt-4 leading-relaxed">
               Demonstrated record in team leadership, executing complex events, coordinating with stakeholders, and crafting communication strategies.
             </p>
-          </div>
+          </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-10">
-            <div className="space-y-6">
-              <h3 className="text-2xl font-bold text-foreground flex items-center gap-2">
-                <Users className="text-primary" /> Core Leadership Roles
-              </h3>
-              <ul className="space-y-3">
+          <div className="grid lg:grid-cols-2 gap-12">
+            <motion.div variants={itemVariants} className="space-y-8">
+              <div className="flex items-center gap-3">
+                <div className="p-2.5 rounded-xl bg-primary/10 border border-primary/20 text-primary shadow-[0_0_15px_rgba(var(--primary),0.2)]">
+                   <Users size={24} />
+                </div>
+                <h3 className="text-3xl font-bold text-foreground">Core Roles</h3>
+              </div>
+              <ul className="grid sm:grid-cols-2 gap-4">
                 {roles.map((role, idx) => (
-                  <li key={idx} className="flex gap-3 text-muted-foreground bg-card border border-border p-3 rounded-lg hover:border-primary/50 transition-colors">
-                    <span className="text-primary mt-0.5 flex-shrink-0">•</span>
-                    <span className="font-medium text-sm md:text-base">{role}</span>
+                  <li key={idx} className="group p-5 rounded-2xl bg-card/40 backdrop-blur-sm border border-white/5 hover:border-primary/40 hover:bg-white/5 transition-all duration-300 flex items-start gap-3">
+                    <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0 group-hover:scale-150 transition-transform shadow-[0_0_8px_rgba(var(--primary),0.8)]" />
+                    <span className="font-medium text-muted-foreground group-hover:text-foreground transition-colors leading-relaxed">{role}</span>
                   </li>
                 ))}
               </ul>
-            </div>
+            </motion.div>
 
-            <div className="space-y-6">
-              <h3 className="text-2xl font-bold text-foreground flex items-center gap-2">
-                <Award className="text-primary" /> Key Achievements
-              </h3>
+            <motion.div variants={itemVariants} className="space-y-8">
+              <div className="flex items-center gap-3">
+                <div className="p-2.5 rounded-xl bg-primary/10 border border-primary/20 text-primary shadow-[0_0_15px_rgba(var(--primary),0.2)]">
+                   <Award size={24} />
+                </div>
+                <h3 className="text-3xl font-bold text-foreground">Key Achievements</h3>
+              </div>
               <div className="space-y-4">
                 {highlights.map((item, idx) => (
-                  <div key={idx} className="flex items-center gap-4 p-5 rounded-xl bg-card border border-border relative overflow-hidden group">
-                    <div className="absolute inset-0 bg-primary/5 translate-y-[100%] group-hover:translate-y-0 transition-transform duration-300 ease-out" />
-                    <div className="p-3 bg-secondary rounded-lg text-primary relative z-10">
+                  <div key={idx} className="flex items-center gap-5 p-6 rounded-3xl card-premium group cursor-default">
+                    <div className="h-full absolute left-0 top-0 w-1 bg-gradient-to-b from-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <div className="p-4 bg-primary/10 rounded-2xl text-primary border border-primary/20 group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300">
                       {item.icon}
                     </div>
-                    <div className="font-medium text-foreground relative z-10 text-lg">
+                    <div className="font-semibold text-foreground text-lg group-hover:text-primary transition-colors">
                       {item.text}
                     </div>
                   </div>
                 ))}
               </div>
-            </div>
+            </motion.div>
           </div>
         </motion.div>
       </div>

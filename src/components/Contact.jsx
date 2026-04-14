@@ -11,42 +11,59 @@ const LinkedinIcon = () => (
 );
 
 export function Contact() {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { staggerChildren: 0.15 } }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 80 } }
+  };
+
   return (
-    <section id="contact" className="py-24 px-6 bg-secondary/30 border-t border-border/50">
-      <div className="container mx-auto max-w-4xl text-center">
+    <section id="contact" className="py-32 px-6 relative overflow-hidden">
+      <div className="absolute inset-0 bg-primary/5 blur-[120px] rounded-[100%] w-full h-[50%] top-[-20%] left-0 -z-10 pointer-events-none" />
+      <div className="container mx-auto max-w-4xl text-center relative z-10">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="space-y-8"
+           variants={containerVariants}
+           initial="hidden"
+           whileInView="visible"
+           viewport={{ once: true }}
+           className="space-y-12"
         >
-          <div className="space-y-4">
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tight">Let's Connect</h2>
-            <p className="text-xl text-muted-foreground pt-4 max-w-2xl mx-auto">
+          <motion.div variants={itemVariants} className="space-y-6">
+            <h2 className="text-4xl md:text-6xl font-bold tracking-tighter text-gradient pb-2">Let's Connect</h2>
+            <p className="text-xl text-muted-foreground/90 max-w-2xl mx-auto leading-relaxed">
               I'm always open to discussing product design work, software engineering roles, or AI system architecture. 
             </p>
-          </div>
+          </motion.div>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-8">
+          <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-10">
             <a href="mailto:premsagartk@gmail.com" 
-               className="flex items-center gap-3 px-6 py-4 bg-card hover:bg-muted border border-border rounded-xl transition-all hover:-translate-y-1 w-full sm:w-auto shadow-sm">
-              <Mail className="text-primary" size={24} />
-              <span className="font-medium text-lg text-foreground">Email Me</span>
+               className="group flex flex-col items-center justify-center gap-4 p-8 card-premium rounded-3xl w-full sm:w-auto min-w-[200px]">
+              <div className="p-4 bg-primary/10 border border-primary/20 rounded-2xl text-primary group-hover:scale-110 group-hover:-rotate-6 transition-transform shadow-[0_0_15px_rgba(var(--primary),0.2)]">
+                <Mail size={32} />
+              </div>
+              <span className="font-bold text-lg text-foreground group-hover:text-primary transition-colors">Email</span>
             </a>
             
             <a href="https://www.linkedin.com/in/prem-sagar-t-k/" target="_blank" rel="noopener noreferrer"
-               className="flex items-center gap-3 px-6 py-4 bg-[#0a66c2]/10 hover:bg-[#0a66c2]/20 border border-[#0a66c2]/20 rounded-xl transition-all hover:-translate-y-1 w-full sm:w-auto shadow-sm">
-              <LinkedinIcon />
-              <span className="font-medium text-lg text-[#0a66c2]">LinkedIn</span>
+               className="group flex flex-col items-center justify-center gap-4 p-8 card-premium rounded-3xl w-full sm:w-auto min-w-[200px] hover:border-[#0a66c2]/30">
+              <div className="p-4 bg-[#0a66c2]/10 border border-[#0a66c2]/20 rounded-2xl text-[#0a66c2] group-hover:scale-110 group-hover:rotate-6 transition-transform shadow-[0_0_15px_rgba(10,102,194,0.2)]">
+                <LinkedinIcon />
+              </div>
+              <span className="font-bold text-lg text-[#0a66c2]">LinkedIn</span>
             </a>
             
             <a href="https://github.com/Prem-Sagar-TK" target="_blank" rel="noopener noreferrer"
-               className="flex items-center gap-3 px-6 py-4 bg-foreground/5 hover:bg-foreground/10 border border-border rounded-xl transition-all hover:-translate-y-1 w-full sm:w-auto shadow-sm text-foreground">
-              <GithubIcon />
-              <span className="font-medium text-lg">GitHub</span>
+               className="group flex flex-col items-center justify-center gap-4 p-8 card-premium rounded-3xl w-full sm:w-auto min-w-[200px]">
+              <div className="p-4 bg-foreground/10 border border-foreground/20 rounded-2xl text-foreground group-hover:scale-110 group-hover:-rotate-6 transition-transform shadow-[0_0_15px_rgba(255,255,255,0.1)]">
+                <GithubIcon />
+              </div>
+              <span className="font-bold text-lg text-foreground group-hover:text-primary transition-colors">GitHub</span>
             </a>
-          </div>
+          </motion.div>
         </motion.div>
       </div>
     </section>

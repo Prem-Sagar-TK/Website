@@ -5,7 +5,7 @@ export function Footer() {
     <footer className="py-8 px-6 text-center border-t border-border">
       <div className="container mx-auto">
         <p className="text-muted-foreground text-sm font-medium">
-          © {new Date().getFullYear()} Prem Sagar T.K. Built with React & Tailwind CSS.
+          © {new Date().getFullYear()} Prem Sagar T.K
         </p>
       </div>
     </footer>
